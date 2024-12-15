@@ -1,7 +1,326 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<title>Hubert Waleńczak portfolio</title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="HTML, CSS, JavaScript, Python, SQL, C++, portfolio">
+	<meta name="description" content="idk">
+	<meta name="author" content="empty">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<div class="overlay" id="overlay">
+	<div class="modal">
+	    <h2>Access Denied</h2>
+	    <p>Get a normal operating system and we'll talk.</p>
+	</div>
+</div>
+
+	<header>
+	    <nav class="nav">
+		<ul class="nav__list">
+		    <li class="nav__item">
+			<a href="#projects" class="nav__link">Projects</a>
+		    </li>
+		    <li class="nav__item">
+			<a href="#skills" class="nav__link">Skills</a>
+		    </li>
+		    <li class="nav__item">
+			<a href="#about" class="nav__link">About me</a>
+		    </li>
+		    <li class="nav__item">
+			<a href="#contact" class="nav__link">Contact</a>
+		    </li>
+
+		</ul>
+	    </nav>
+	</header>
+
+
+	<section class="intro" id="home">
+	    <div class="section__container--intro">
+		<h1 class="section__title section__title--intro">
+		    My name is Hubert Waleńczak.
+		</h1>
+		<p class="section__subtitle section__subtitle--intro">
+		    A Data & AI Engineer
+		</p>
+		<img
+		    src="./resources/images/HubertProfile.png"
+		    alt="Profile picture"
+		    class="intro__img"
+		    loading="eager"
+		/>
+	    </div>
+	    <ul class="social-list">
+		<li class="social-list__item">
+		    <a
+			class="social-list__link"
+			href="https://github.com/HubertWalenczak220817?tab=repositories"
+			target="_blank"
+			aria-label="Find me on Github"
+		    >
+			<span class="sr-only sr-only-focusable">Find me on Github</span>
+			<i class="fa-brands fa-github"></i>
+		    </a>
+		</li>
+		<li class="social-list__item">
+		    <a
+			class="social-list__link"
+			href="https://www.linkedin.com/in/hubert-wale%C5%84czak-75b719254/"
+			target="_blank"
+			aria-label="Find me on LinkedIn"
+		    >
+			<span class="sr-only sr-only-focusable">Find me on LinkedIn</span>
+			<i class="fa-brands fa-linkedin-in"></i>
+		    </a>
+		</li>
+		<li class="social-list__item">
+		    <a
+			class="social-list__link"
+		            href="mailto:hubertwalenczak@gmail.com"
+		            target="_blank"
+		            aria-label="Contact me via email"
+		    >
+			<span class="sr-only sr-only-focusable">Contact me via email</span>
+    			<i class="fa-solid fa-envelope"></i>
+		    </a>
+		</li>
+	    </ul>
+	</section>
+
+
+	<section class="my-projects" id="projects">
+	    <h2 class="section__title section__title--projects">My projects</h2>
+	    <div class="portfolio"></div>
+	    
+	    <div class="portfolio__section" id="Natural Language Processing for Emotions Classification">
+		<h3>Natural Language Processing for Emotions Classification</h3>
+		<p>A comprehensive pipeline that transcribes TV episodes and identifies the associated emotions.
+		    <br><strong>Collaboration with Banijay Benelux</strong></p>
+		<button class="read-more-btn btn btn-accent">Read More</button>
+	                <div class="more-content">
+		    <div class="portfolio__description">
+			<div class="portfolio__summary">
+			    <h4 class="mobile-hidden">SUMMARY</h4>
+			    <p>
+				The Emotion Classification Pipeline for Banijay Benelux is an advanced NLP 
+				system aimed at analyzing and categorizing emotions within television show content. 
+				This project involved developing an end-to-end pipeline that transforms audio from 
+				episodes into text, subsequently tagging the emotions expressed in various segments. 
+				By utilizing cutting-edge NLP methods, the pipeline provides insights into audience. 
+				engagement and the emotional performance of actors across different episodes, 
+				facilitating improved content creation and targeted distribution strategies.
+			    </p>
+			    <div class="portfolio__tech-stack">
+				<h4>TECH</h4>
+				<ul>
+				    <li>OpenAI Whisper</li>
+				    <li>Spacy</li>
+				    <li>Transformers Models</li>
+				    <li>Tensorflow</li>
+				</ul>
+			    </div>
+			    <div>
+				<a
+				    href="./resources/Technical_Report_Y2C.pdf"
+				    target="_blank"
+				    class="btn btn-accent-dark"
+				    aria-label="Read paper"
+				    >Read tech paper <i class="fa-solid fa-angle-right"></i
+				></a>
+			    </div>
+			</div>
+			<div class="portfolio__description__img">
+			    <h4></h4>
+			    <img
+			        src="./images/projects/banijay-benelux.png"
+			        alt="Plant phenotyping gif"
+			        loading="lazy"
+			    />
+			    <br>
+			    <br>
+			    <br>
+			    <br>
+			    <img
+				src="./images/projects/nlp3.png"
+				alt="Plant phenotyping gif"
+				loading="lazy"
+			    />
+			</div>
+		    </div>
+		</div>
+	    </div>
+
+	    <div class="portfolio__section" id="Using AI in Plant phenotyping">
+		<h3>Using AI in Plant phenotyping</h3>
+		<p>The project leverages AI and robotics to improve plant phenotyping, setting new standards in agricultural research.
+		    <br><strong>Collaboration with Netherlands Plant Eco-phenotyping Centre (NPEC)</strong></p>
+		<button class="read-more-btn btn btn-accent">Read More</button>
+	                <div class="more-content">
+		    <div class="portfolio__description">
+			<div class="portfolio__summary">
+			    <h4 class="mobile-hidden">SUMMARY</h4>
+			    <p>
+				The Plant Phenotyping Project is an AI initiative aimed at enhancing plant phenotyping
+				through image analysis and robotic automation. This project involves two main components: <br>
+				- Root Segmentation: Utilizing advanced image processing and machine learning techniques,
+				this component focuses on segmenting plant roots in images. By applying AI, the system 
+				can accurately identify and root structures, automating phenotyping. <br>
+				- Robot-Controlled Inoculation: This component involves the automation of plant inoculation
+				using a liquid handling robot. A control system is developed to ensure precise and quick delivery
+				of substances to root tip locations, enhancing the throughtput of experimental treatments. <br>
+				Additionally, the project involved developing a scalable API that processes input data and returns 
+				predictions with confidence scores. The system is designed to support automatic retraining and 
+				continuous monitoring to ensure high accuracy over time. The deployment process includes automated 
+				testing and versioning, with manual approval required for production releases. All code and related 
+				assets are managed using git versioning system, ensuring efficient collaboration and traceability. <br>
+			    </p>
+			    <div class="portfolio__tech-stack">
+				<h4>TECH</h4>
+				<ul>
+				    <li>Tensorflow</li>
+				    <li>Keras</li>
+				    <li>Deep learning</li>
+				    <li>OpenCV</li>
+				    <li>Reinforcement learning</li>
+				    <li>Robotics</li>
+				    <li>MLFlow</li>
+				    <li>FastAPI</li>
+				    <li>Azure ML</li>
+				    <li>Docker</li>
+				</ul>
+			    </div>
+			    <div>
+				<a
+				    href="./resources/Technical_Report_Y2B.pdf"
+				    target="_blank"
+				    class="btn btn-accent-dark"
+				    aria-label="Read paper"
+				    >Read tech paper <i class="fa-solid fa-angle-right"></i
+				></a>
+			    </div>
+			</div>
+			<div class="portfolio__description__img">
+			    <h4>DEMO</h4>
+			    <img
+			        src="./images/projects/Roots measurementd.gif"
+			        alt="Plant phenotyping gif"
+			        loading="lazy"
+			    />
+			</div>
+		    </div>
+		</div>
+	    </div>
+	    
+	    <div class="portfolio__section" id="Fire Detection system">
+		<h3>Wild Animal Detction System</h3>
+		<p>This project uses machine learning to detect wild animals within images with high accuracy.</p>
+		<button class="read-more-btn btn btn-accent">Read More</button>
+	                <div class="more-content">
+		    <div class="portfolio__description">
+			<div class="portfolio__summary">
+			    <h4 class="mobile-hidden">SUMMARY</h4>
+			    <p>
+				The Wild Animal Detection System is a machine learning project designed to identify
+				wild animals in images using Convolutional Neural Networks (CNN). 
+				This project includes a Jupyter notebook that details the entire workflow,
+				from data description and model building to training, evaluation, and explainability. 
+				The CNN models are trained on a dataset of Wild animals and human images, 
+				learning to distinguish between the two with high accuracy.
+				Additionally, the project includes a porsona and wireframe that showcases 
+				the practical application of the model in a real-world scenario.
+			    </p>
+			    <div class="portfolio__tech-stack">
+				<h4>TECH</h4>
+				<ul>
+				    <li>Tensorflow</li>
+				    <li>Keras</li>
+				    <li>Deep learning</li>
+				    <li>CNN</li>
+				    <li>Wireframe</li>
+				    <li>XAI</li>
+				    <li>Responsible AI</li>
+				</ul>
+			    </div>
+			    <div>
+				<a
+				    href="https://github.com/BredaUniversityADSAI/2022-23c-1fcmgt-reg-ai-01-HubertWalenczak220817/blob/main/Deliverables/Creative-Brief-CNN.ipynb"
+				    target="_blank"
+				    class="btn btn-accent-dark"
+				    aria-label="See the code"
+				    >SEE THE CODE <i class="fa-solid fa-angle-right"></i
+				></a>
+			    </div>
+			</div>
+			<div class="portfolio__description__img">
+			    <h4>DEMO</h4>
+			    <img
+			        src="./images/projects/Fire detected.gif"
+			        alt="Github Readme Daily Quotes Logo"
+			        loading="lazy"
+			    />
+			</div>
+		    </div>
+		</div>
+	    </div>
+	</section>
+
+
+	<section class="my-skills" id="skills">
+	    <h2 class="section__title section__title--skills">Skills</h2>
+	    <div class="skills">
+		<div class="skill">
+		    <h3>Programming and Data</h3>
+		    <ul class="skill-list">
+			<li class="skill-list__item">Python, R, C++</li>
+			<li class="skill-list__item">HTML, CSS, JavaScript</li>
+			<li class="skill-list__item">Pandas, Numpy, Excel, PySpark</li>
+			<li class="skill-list__item">MySQL, PostgreSQL</li>
+		    </ul>
+		</div>
+		<!-- / skill -->
+
+		<div class="skill">
+		    <h3>Artificial Intelligence</h3>
+		    <ul class="skill-list">
+			<li class="skill-list__item">Scikit-Learn, TensorFlow, PyTorch, Keras</li>
+			<li class="skill-list__item">Computer vision, OpenCV</li>
+			<li class="skill-list__item">Hugging Face Models, SpaCy, NLTK</li>
+		    </ul>
+		</div>
+		<!-- / skill -->
+
+		<div class="skill">
+		    <h3>Tools and Technologies</h3>
+		    <ul class="skill-list">
+			<li class="skill-list__item">Azure ML, Anaconda</li>
+			<li class="skill-list__item">REST API</li>
+			<li class="skill-list__item">Matplotlib, PowerBI</li>
+			<li class="skill-list__item">CI/CD, Docker, Git</li>
+		    </ul>
+		</div>
+		<!-- / skill -->
+	    </div>
+	    <!-- / skills -->
+	</section>
+	
+	<div class="wave-spacer wave-black-to-base"></div>
+
+
+	<!-- About Me Section -->
+	<section class="about-me" id="about">
+	    <h2 class="section__title section__title--about">About me</h2>
+	    <p>
+		<div class="about-me__body">
+		    <p>
+                yes
+		    </p>
+		</div>
+	    </p>
+	</section>
+
+	<script src="script.js"></script>
 </body>
 </html>
