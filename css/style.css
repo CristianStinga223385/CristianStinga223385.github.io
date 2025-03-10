@@ -390,6 +390,13 @@ img {
 	border-radius: 50%
 }
 
+.img-banner {
+	width: 75vw;
+	height: 6cm;
+	vertical-align: middle;
+  }
+  
+
 hr {
 	margin-top: 19px;
 	margin-bottom: 19px;
