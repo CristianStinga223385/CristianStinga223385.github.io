@@ -44,15 +44,106 @@
         <div class="card-container">
           <div class="text-center">
             <!-- Page Title -->
-            <h1 class="h2">001 : Plant Phenotyping for NPEC</h1>
+            <h1 class="h2"> 001 : Plant Phenotyping </h1>
           </div>
-          <p>
+          <h1 class="h4">
             Instance Segmentation for Accurate Plant Root Measurement at the Netherlands Plant Eco-Phenotyping Centre
+          </h1>
+
+          <br><br><br><br>
+          <h1 class="h4"> Introduction </h1>
+          <p>
+            This project, developed for the Netherlands Plant Eco-phenotyping Centre (NPEC), aims to advance plant 
+            phenotyping through the integration of computer vision, machine learning, and robotics. The primary focus 
+            is automating the detection and measurement of plant root systems using advanced image processing techniques.
+          </p>
+
+          <p>
+            The project consists of two key components:
+          </p>
+
+          <ul>
+            <li>Segmenting plant roots from images</li>
+            <li>Automating plant inoculation with a liquid handling robot</li>
+          </ul>
+
+          <p>
+            By leveraging AI and robotics, the project streamlines phenotyping workflows and enhances experimental throughput 
+            for plant research.
+          </p>
+          
+          <h1 class="h4"> Dataset and Preprocessing </h1>
+
+          <p>
+            The dataset consists of 118 grayscale images, each containing 5 plants, manually annotated using the Labkit software. 
+            Each image includes four masks, representing different plant organs: shoot, seed, root, and occluded root (roots covered by objects).
+          </p>
+          
+          <p>Preprocessing steps applied to each image:</p>
+
+          <ul>
+            <li>Detecting and cropping the Petri dish (region of interest)</li>
+            <li>Adding padding to ensure divisibility by a specified patch size</li>
+            <li>Splitting the cropped image into smaller patches (patchification)</li>
+          </ul>
+          
+          <img src="../assets/images/image_steps.png" class="img-responsive">
+          
+          <p>
+            The dataset was split into:
+          </p>
+
+          <ul>
+            <li>70 training images → 8,470 patches</li>
+            <li>18 validation images → 2,178 patches</li>
+            <li>40 test images</li>
+          </ul>
+          
+          <h1 class="h4"> Model, Post-Processing, and Performance Overview </h1>
+          <p>
+            The model used is a Keras-based U-Net architecture, specifically the implementation by Sreenivas Bhattiprolu, 
+            for semantic segmentation. The model's inputs are the previously mentioned patches, and the outputs are
+            binary masks for the plant roots. After obtaining the model output, several post-processing steps were applied to
+            refine the segmentation results and remove noise. 
+            These steps included removing small objects and holes, filtering components based on different stats
+            and applying proximity checks to ensure accurate root detection. Finally, the mask was filtered to 
+            retain only the 5 roots.
+          </p>
+          
+          <b> Add image before and after </b>
+          
+          <p>
+            Skeletonization of root masks allowed the detection of key landmarks: root starting point, primary root tips and
+            root junctions.
+          </p>
+          
+          <img src="../assets/images/skeletonized plant.png" class="img-responsive">
+          
+          <h1 class="h4">Robotics</h1>
+          <p>
+            The second part of the project involved creating a controller for the pipetting robot. I worked using a
+            simulated robotic environment for the Opentrons OT-2 pipetting robot. The simulation was used to create
+            two controllers for the robot. One PID Controller and one Reinforcement Learning Controller. Both had the
+            task of moving the robot's pipette to a specified location (the root tips identified by the computer vision pipeline)
+            and then lowering the pipette to inject the liquid solution. The PID controller provided proportional responses
+            to visual errors, while the RL algorithm learned to adapt to changing visual input, optimizing the robot's
+            precision.
+          </p>
+          
+          <b> Add image of simulation and GIF of simulation working </b>  
+          
+          <h1 class="h4">Conclusion</h1>
+          <p>
+            This project successfully integrates computer vision and robotics to automate plant phenotyping. 
+            Deep learning-based root segmentation, morphometric analysis, and robotic control using PID and RL 
+            enable a high-precision, high-throughput system. The result is an efficient and scalable phenotyping 
+            solution for plant research at NPEC.
+          </p>
+          
+
           </p>
         </div>
       </div>
-
-
     </div>
   </div>
 </div>
